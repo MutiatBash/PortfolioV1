@@ -54,13 +54,13 @@ const FolderIcon = () => (
 );
 
 const Nav = () => (
-  <nav className="flex items-center justify-between py-4 text-[13px] text-secondary">
+  <nav className="flex items-center justify-between py-4 text-[13px] text-secondary sticky top-0 z-50 bg-background">
     <span className={`${cursiveFont.className} text-xl`} style={{ color: 'var(--accent)' }}>
       MB
     </span>
     <div className="flex gap-5">
       {NAV_LINKS.map((link) => (
-        <a key={link.href} href={link.href} className="hover:text-primary transition-colors capitalize">
+        <a key={link.href} href={link.href} className="hover:text-(--accent) transition-colors capitalize">
           {link.label}
         </a>
       ))}
@@ -69,40 +69,37 @@ const Nav = () => (
 );
 
 const Hero = () => (
-  <section className="border-b border-neutral-200 py-16 sm:py-20">
+  <section className="border-b border-neutral-200 py-12 sm:pt-16">
     <h1 className="max-w-xl text-4xl font-medium leading-tight tracking-tight sm:text-5xl">
       Mutiat Bashua
     </h1>
-    <p className="mt-4 max-w-sm text-[15px] text-secondary">
-      I build interfaces that hold up under scrutiny — clean code, considered detail, nothing accidental.
+    <p className="mt-4 max-w-sm sm:max-w-lg text-[15px] text-secondary">
+      Frontend developer, curious builder, and lifelong learner.
     </p>
     <a
       href="#work"
       className="mt-6 inline-block border-b text-sm font-medium"
       style={{ borderColor: 'var(--accent)', color: 'var(--accent)' }}
     >
-      View work
+      View my work
     </a>
   </section>
 );
 
 const About = () => (
   <section id="about" className="border-b border-neutral-200 py-12">
-    <p className="mb-3 text-[11px] uppercase tracking-wide text-muted">about</p>
+    <p className="mb-3 text-[13px] uppercase tracking-wide text-muted font-semibold">A little about me</p>
     <p className="max-w-lg text-[15px] leading-relaxed">
-      I&apos;m Mutiat — a frontend developer with a background in graphic design. That combination
-      shapes how I work: I care as much about how an interface feels as how it&apos;s built. I write
-      React, TypeScript, and Tailwind day to day, and I&apos;ve picked up Angular and HubSpot along the
-      way for client work. Outside of building, I run workshops teaching designers how to use AI tools
-      to strengthen their portfolios — because design and code shouldn&apos;t feel like separate skill
-      sets.
+      I'm a frontend developer with a background in Psychology and a curiosity that often takes me beyond my comfort zone.
+      I enjoy understanding how people interact with technology and turning that understanding into interfaces that are intuitive, functional, and enjoyable to use.
+      Outside of frontend development, I've been exploring mobile development, illustration, animation, and other creative skills. I'm always learning something new and looking for opportunities to turn what I learn into something tangible.
     </p>
   </section>
 );
 
 const Skills = () => (
   <section className="border-b border-neutral-200 py-12">
-    <p className="mb-4 text-[11px] uppercase tracking-wide text-muted">skills</p>
+    <p className="mb-4 text-[13px] uppercase tracking-wide text-muted font-semibold">skills</p>
     <div className="flex flex-wrap gap-2">
       {SKILLS.map((skill) => (
         <span
@@ -117,17 +114,17 @@ const Skills = () => (
 );
 
 const ProjectCard = ({ project }: { project: (typeof PROJECTS)[number] }) => (
-  <div className="group block rounded-xl border border-neutral-200 p-5 transition-colors hover:border-neutral-400">
+  <div className="group block rounded-xl border border-neutral-200 p-5 transition-colors hover:border-(--accent)">
     <div className="flex items-center justify-between">
       <div className="flex items-center gap-2">
         <FolderIcon />
         <p className="text-[15px] font-medium">{project.name}</p>
       </div>
       <div className="flex gap-3 text-[13px] text-muted opacity-0 transition-opacity group-hover:opacity-100">
-        <a href={project.repo} target="_blank" rel="noopener noreferrer" className="hover:text-primary">
+        <a href={project.repo} target="_blank" rel="noopener noreferrer" className="hover:text-(--accent)">
           Github ↗
         </a>
-        <a href={project.url} target="_blank" rel="noopener noreferrer" className="hover:text-primary">
+        <a href={project.url} target="_blank" rel="noopener noreferrer" className="hover:text-(--accent)">
           Live ↗
         </a>
       </div>
@@ -145,7 +142,7 @@ const ProjectCard = ({ project }: { project: (typeof PROJECTS)[number] }) => (
 
 const Work = () => (
   <section id="work" className="border-b border-neutral-200 py-12">
-    <p className="mb-4 text-[11px] uppercase tracking-wide text-muted">selected work</p>
+    <p className="mb-4 text-[13px] uppercase tracking-wide text-muted font-semibold">selected work</p>
     <div className="flex flex-col gap-3">
       {PROJECTS.map((project) => (
         <ProjectCard key={project.name} project={project} />
@@ -200,9 +197,9 @@ const ContactForm = () => {
       ) : (
         <button
           type="submit"
-          className="mt-1 w-fit rounded-full border border-neutral-900 px-5 py-2 text-[13px] font-medium transition-transform active:scale-[0.98]"
+          className="text-black mt-1 w-fit rounded-full border border-neutral-900 px-5 py-2 text-[13px] font-semibold transition-transform active:scale-[0.98] bg-(--accent) cursor-pointer"
         >
-          send
+          Send
         </button>
       )}
     </form>
@@ -211,7 +208,7 @@ const ContactForm = () => {
 
 const Contact = () => (
   <section id="contact" className="py-12">
-    <p className="mb-3 text-[11px] uppercase tracking-wide text-muted">contact</p>
+    <p className="mb-3 text-[13px] uppercase tracking-wide text-muted font-semibold">contact</p>
     <h2 className="text-2xl font-medium">Let&apos;s build something.</h2>
     <div className="flex flex-col gap-1">
       <a href="mailto:mutiatbashua@gmail.com" style={{ color: 'var(--accent)' }} className="text-sm">
