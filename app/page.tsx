@@ -55,9 +55,9 @@ const FolderIcon = () => (
 
 const Nav = () => (
   <nav className="flex items-center justify-between py-4 text-[13px] text-secondary sticky top-0 z-50 bg-background">
-    <span className={`${cursiveFont.className} text-xl`} style={{ color: 'var(--accent)' }}>
+    <a href="/" className={`${cursiveFont.className} text-xl`} style={{ color: 'var(--accent)' }}>
       MB
-    </span>
+    </a>
     <div className="flex gap-5">
       {NAV_LINKS.map((link) => (
         <a key={link.href} href={link.href} className="hover:text-(--accent) transition-colors capitalize">
@@ -206,13 +206,31 @@ const ContactForm = () => {
   );
 };
 
+const ArrowIcon = () => (
+  <svg
+    width="12"
+    height="12"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="ml-1 inline-block"
+    aria-hidden="true"
+  >
+    <path d="M7 17 17 7" />
+    <path d="M7 7h10v10" />
+  </svg>
+);
+
 const Contact = () => (
   <section id="contact" className="py-12">
     <p className="mb-3 text-[13px] uppercase tracking-wide text-muted font-semibold">contact</p>
-    <h2 className="text-2xl font-medium">Let&apos;s build something.</h2>
+    <h2 className="text-2xl font-medium">Let's build something.</h2>
     <div className="flex flex-col gap-1">
       <a href="mailto:mutiatbashua@gmail.com" style={{ color: 'var(--accent)' }} className="text-sm">
-        mutiatbashua@gmail.com ↗
+        mutiatbashua@gmail.com<ArrowIcon />
       </a>
     </div>
     <ContactForm />
